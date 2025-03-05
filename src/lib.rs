@@ -123,8 +123,8 @@ pub fn query_osc_buffer<'b, MS: Into<u64> + Copy>(
                             }
                         }
                         Some(start_idx) => {
-                            if b == ESC as u8 || b == 7 /* BEL */ {
-                                if osc_start_idx.is_none() {
+                            if b == ESC as u8 || b == /* BEL */ 7 {
+                                if osc_end_idx.is_none() {
                                     osc_end_idx = Some(i);
                                 }
                             } else if b == b'n' {
